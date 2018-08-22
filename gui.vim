@@ -1,7 +1,5 @@
 " vim: set ft=vim;
 
-" 图形化配置
-set viminfo='3000,n$HOME/.vim/files/info/viminfogui
 " 光标样式
 " n 默认模式
 " v 虚拟模式
@@ -15,13 +13,13 @@ set guicursor+=r-cr:hor10-Cursor
 " set guicursor+=cm:hor10-Cursor
 
 " 图形字体
-set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h11.5
-set guifontwide=DejaVu\ Sans\ Mono\ for\ Powerline:h11.5
+" set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h11.5
+" set guifontwide=DejaVu\ Sans\ Mono\ for\ Powerline:h11.5
 " set guifont=Source_Code_Pro:h11.5
 " set guifontwide=Source_Code_Pro:h11.5
 
 " CtrlSpace
-let g:CtrlSpaceSymbols = { "File": "◯", "CTab": "▣", "Tabs": "▢" }
+" let g:CtrlSpaceSymbols = { "File": "◯", "CTab": "▣", "Tabs": "▢" }
 
 
 " 个人设置
@@ -33,7 +31,7 @@ let g:CtrlSpaceSymbols = { "File": "◯", "CTab": "▣", "Tabs": "▢" }
 " cnoreabbrev wqa wa<bar>bd<bar>:call CloseOnLast()<CR>
 " cnoreabbrev q bd<bar>:call CloseOnLast()<CR>
 " 重新映射新的命令
-cnoreabbrev q call CloseOnLast()
-cnoreabbrev qa on<bar>call CloseOnLast()
-cnoreabbrev wq w<bar>call CloseOnLast()
-cnoreabbrev wqa wa<bar>on<bar>call CloseOnLast()
+" cnoreabbrev q call CloseOnLast()
+" cnoreabbrev qa on<bar>call CloseOnLast()
+" cnoreabbrev wq w<bar>call CloseOnLast()
+" cnoreabbrev wqa wa<bar>on<bar>call CloseOnLast()

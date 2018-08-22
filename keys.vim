@@ -2,31 +2,20 @@
 
 " 这个布局是为HHKB设的
 let mapleader = "`"
-let maplocalleader = "\\"
+let maplocalleader = ","
 
 " F系列快捷键
-" {{{
-" 重新Build YCM
-" nmap <silent> <F2> :YcmForceCompileAndDiagnostics<CR>
-" 快速搜索文件
-nmap <silent> <F3> :CtrlSpace O<CR>
-" 撤销树
-nmap <silent> <F4> :GundoToggle<CR>
 " 行号
 nmap <silent> <F5> :set invnu<CR>
 " 粘贴模式
 nmap <silent> <F6> :set invpaste<CR>
-" 格式化
-nmap <silent> <F7> :Autoformat<CR>
 
 " 目录树
 nmap <silent> <F9> :NERDTreeToggle<CR>
 " 标签树
 nmap <silent> <F10> :TagbarToggle<CR>
-" }}}
 
 " 默认快捷键
-" {{{
 " 快速跳到下一个驼峰位置
 nmap t` /[A-Z]<cr>
 
@@ -45,18 +34,6 @@ nmap k gk
 nmap T :tabnew<cr>
 " }}}
 
-" Ctrl 快捷键系列
-" {{{
-" 分屏快速跳转
-" nmap <silent> <c-h> <C-w>h
-" nmap <silent> <c-j> <C-w>j
-" nmap <silent> <c-k> <C-w>k
-" nmap <silent> <c-l> <C-w>l
-" }}}
-
-" 插件快捷键配置
-" {{{
-" 多选择
 let g:multi_cursor_start_key='<C-n>'
 let g:multi_cursor_start_word_key='g<C-n>'
 let g:multi_cursor_next_key='<C-n>'
@@ -71,29 +48,6 @@ nmap <silent> <leader>yd :Yde<CR>
 
 " 搜索
 nmap <leader><space> :nohlsearch<CR>
-nmap <silent><C-p> :CtrlSpace O<CR>
-nmap <silent><leader>ph :CtrlSpace h<CR>
-nmap <silent><leader>pH :CtrlSpace H<CR>
-nmap <silent><leader>pb :CtrlSpace b<CR>
-nmap <silent><leader>pB :CtrlSpace B<CR>
-nmap <silent><leader>pw :CtrlSpace w<CR>
-nmap <silent><leader>pW :CtrlSpace W<CR>
-
-" 自动补全
-let g:ycm_key_invoke_completion = '<C-p>'
-let g:ycm_key_detailed_diagnostics = '<leader>d'
-
-" Elixir
-
-" 代码片段
-let g:UltiSnipsExpandTrigger="<C-g>"
-let g:UltiSnipsJumpForwardTrigger="<C-f>"
-let g:UltiSnipsJumpBackwardTrigger="<C-b>"
-" let g:UltiSnipsEditSplit="vertical"
-
-" Leader 快捷键系列
-nmap <silent> <leader>d <Plug>DashSearch
-map <silent> <leader>s <Plug>Vsurround
 
 vmap <d-c> :w !pbcopy<CR><CR>
 
@@ -140,59 +94,15 @@ nmap <buffer> <LocalLeader>a :TestSuite<CR>
 nmap <buffer> <LocalLeader>l :TestLast<CR>
 nmap <buffer> <LocalLeader>g :TestVisit<CR>
 
-" 语言按键绑定
-" au FileType go nmap <Leader>t <Plug>(go-test)
-au FileType go nmap <buffer> <LocalLeader>r <Plug>(go-run)
-au FileType go nmap <buffer> <LocalLeader>b <Plug>(go-build)
-au FileType go nmap <buffer> <LocalLeader>c <Plug>(go-coverage)
-" au FileType go nmap <buffer> <LocalLeader>gb :!gb build<CR>
-" au FileType go nmap <buffer> <LocalLeader>gt :!gb test<CR>
-" 文档
-au FileType go nmap <buffer> <LocalLeader>ds <Plug>(go-def-split)
-au FileType go nmap <buffer> <LocalLeader>dv <Plug>(go-def-vertical)
-au FileType go nmap <buffer> <LocalLeader>dt <Plug>(go-def-tab)
-au FileType go nmap <buffer> <LocalLeader>d <Plug>(go-doc)
-au FileType go nmap <buffer> <LocalLeader>v <Plug>(go-doc-vertical)
-" 实现
-au FileType go nmap <buffer> <LocalLeader>i <Plug>(go-implements)
-" 信息
-au FileType go nmap <buffer> <LocalLeader>n <Plug>(go-info)
-" 重命名
-au FileType go nmap <buffer> <LocalLeader>e <Plug>(go-rename)
-" 运行
-au FileType go nmap <buffer> <Localleader>rt <Plug>(go-run-tab)
-au FileType go nmap <buffer> <LocalLeader>rs <Plug>(go-run-split)
-au FileType go nmap <buffer> <LocalLeader>rv <Plug>(go-run-vertical)
-
-" Elm
-" au FileType elm nmap <buffer> <LocalLeader>el <Plug>(ElmEvalLine)
-" au FileType elm nmap <buffer> <LocalLeader>em <Plug>(ElmMakeCurrentFile)
-" au FileType elm vmap <buffer> <LocalLeader>es <Plug>(ElmEvalSelection)
-
-" API Blueprint
-" autocmd FileType apiblueprint nmap <Leader>c :call GenerateRefract()<cr>
-" }}}
-
-" 自定义函数绑定快捷键
-" {{{
-" 清除隐藏的Buffers
-" cnoreabbrev bclear call DeleteHiddenBuffers()
 cmap bclear call DeleteHiddenBuffers()
-" cnoreabbrev vspp call ()
-" cnoreabbrev spp call DeleteHiddenBuffers()
 
-" 创建目录
-" cnoremap mk. !mkdir -p <c-r>=expand("%:h")<cr>/
-
-" 当前目录
 cmap <C-t> <C-\>eAppendCurrentPath()<CR>
 func! AppendCurrentPath()
     let current = getcmdline() . " " . expand("%:h") . "/"
     call setcmdpos(strlen(current)+1)
     return current
 endfunc
-" }}}
 
-cmap W w
-cmap Q q
-cmap Wq wq
+" cmap W w
+" cmap Q q
+" cmap Wq wq
