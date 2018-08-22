@@ -14,7 +14,6 @@ augroup config
           \'whitelist': ['javascript'],
           \})
     autocmd FileType javascript setlocal omnifunc=lsp#complete
-    echom 'hello'
   endif
 
   " linter & fixer
