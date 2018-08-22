@@ -4,8 +4,10 @@ set -e
 
 echo "Install koine vim"
 
-echo "backup..."
-mv -f ~/.vim ~/.vim.old
+if [ -d "~/.vim" ]; then
+  echo "backup..."
+  mv -f ~/.vim ~/.vim.old
+fi
 
 echo "clone..."
 git clone https://github.com/ygmpkk/simple-vim ~/.vim
